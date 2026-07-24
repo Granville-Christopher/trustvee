@@ -1,14 +1,16 @@
 {
   "buildCommand": "npm run install:all && npm run build",
   "installCommand": "npm install",
+  "outputDirectory": "server/public",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api" }
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "functions": {
     "api/index.ts": {
       "memory": 1024,
       "maxDuration": 30,
-      "includeFiles": "server/{public,dist}/**"
+      "includeFiles": "server/dist/**"
     }
   }
 }
