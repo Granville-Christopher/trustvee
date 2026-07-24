@@ -1,0 +1,9 @@
+{
+  "name": "trustvee-fn",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Single Vercel serverless entry for Trustvee",
+  "dependencies": {
+    "@vercel/node": "^5.3.6"
+  }
+}
