@@ -1,0 +1,228 @@
+.auth-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.25rem 2.5rem;
+}
+
+.auth-top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  height: var(--nav-height);
+  margin: 0 -1.25rem;
+  padding: 0 1.25rem;
+  backdrop-filter: blur(14px);
+  background: rgba(244, 247, 245, 0.92);
+  border-bottom: 1px solid var(--line);
+}
+
+.auth-brand {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.auth-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+.auth-main {
+  flex: 1;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding-top: 1.75rem;
+}
+
+.auth-intro {
+  margin-bottom: 1.6rem;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 7vw, 2.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--forest);
+  margin-bottom: 0.45rem;
+}
+
+.auth-subtitle {
+  color: var(--muted);
+  font-size: 0.98rem;
+  max-width: 34ch;
+}
+
+.auth-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.auth-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.auth-input {
+  width: 100%;
+  min-height: 3.1rem;
+  padding: 0.75rem 0.95rem;
+  border: 1.5px solid rgba(11, 61, 46, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+.auth-input::placeholder {
+  color: rgba(10, 31, 24, 0.38);
+}
+
+.auth-input:focus {
+  border-color: var(--forest-mid);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(11, 61, 46, 0.1);
+}
+
+.auth-password-wrap {
+  position: relative;
+}
+
+.auth-input--password {
+  padding-right: 3rem;
+}
+
+.auth-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.55rem;
+  transform: translateY(-50%);
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--muted);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.auth-password-toggle:hover {
+  color: var(--forest);
+  background: rgba(11, 61, 46, 0.06);
+}
+
+.auth-password-toggle[aria-pressed="true"] {
+  color: var(--forest);
+}
+
+.auth-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: -0.15rem;
+}
+
+.auth-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-check input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--forest);
+}
+
+.auth-link {
+  color: var(--forest);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.auth-link:hover {
+  color: var(--forest-mid);
+}
+
+.auth-submit {
+  width: 100%;
+  min-height: 3.15rem;
+  margin-top: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.auth-submit:hover {
+  background: var(--forest-mid);
+  transform: translateY(-1px);
+}
+
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.auth-footer .auth-link {
+  font-size: inherit;
+}
+
+.auth-hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: -0.15rem;
+}
+
+.auth-error {
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(140, 40, 40, 0.08);
+  border: 1px solid rgba(140, 40, 40, 0.18);
+  color: #7a2e2e;
+  font-size: 0.9rem;
+}
+
+.auth-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230B3D2E' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
