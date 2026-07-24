@@ -5,7 +5,22 @@ Membership platform: packages, daily tasks, claims, referrals, Paystack.
 ## Structure
 
 - `web/` — mobile-first React app (max 768px)
-- `api/` — NestJS backend
+- `api/` — NestJS + **MongoDB** (Mongoose)
+
+## Database (MongoDB)
+
+Default local URI: `mongodb://127.0.0.1:27017/trustvee`
+
+```bash
+cd api
+cp .env.example .env
+# edit MONGODB_URI if using Atlas
+npm install
+npm run start:dev
+```
+
+Health: `GET http://localhost:3000/api/health`  
+Packages: `GET http://localhost:3000/api/packages`
 
 ## Run homepage
 
