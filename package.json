@@ -1,10 +1,19 @@
 {
-  "dependencies": {
-    "framer-motion": "^12.42.2",
-    "react-icons": "^5.7.0",
-    "react-router-dom": "^7.18.1"
+  "name": "trustvee",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Trustvee Elite — Nest API + React client (single deploy)",
+  "scripts": {
+    "install:all": "npm install --prefix web && npm install --prefix server",
+    "build:web": "npm run build --prefix web",
+    "build:server": "npm run build --prefix server",
+    "copy:client": "node scripts/copy-client.js",
+    "build": "npm run build:web && npm run copy:client && npm run build:server",
+    "start": "npm run start:prod --prefix server",
+    "start:dev": "npm run start:dev --prefix server",
+    "dev:web": "npm run dev --prefix web"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1"
+    "@vercel/node": "^5.3.6"
   }
 }

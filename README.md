@@ -1,33 +1,36 @@
 # Trustvee Elite
 
-Membership platform: packages, daily tasks, claims, referrals, Paystack.
+One app: **NestJS serves the React frontend + API** (single Vercel serverless function).
 
 ## Structure
 
-- `web/` — mobile-first React app (max 768px)
-- `api/` — NestJS + **MongoDB** (Mongoose)
+- `web/` — React client (Vite). Built into `server/public`
+- `server/` — NestJS + MongoDB (serves `/api` and the SPA)
+- `api/index.ts` — **only** Vercel serverless entry (avoids the 12-function Hobby limit)
 
-## Database (MongoDB)
-
-Default local URI: `mongodb://127.0.0.1:27017/trustvee`
+## Setup
 
 ```bash
-cd api
-cp .env.example .env
-# edit MONGODB_URI if using Atlas
-npm install
-npm run start:dev
+# MongoDB
+# set MONGODB_URI in server/.env
+
+npm run install:all
 ```
 
-Health: `GET http://localhost:3000/api/health`  
-Packages: `GET http://localhost:3000/api/packages`
-
-## Run homepage
+### Local (API + built frontend together)
 
 ```bash
-cd web
-npm install
-npm run dev
+npm run build
+npm run start
+# http://localhost:3000
+# http://localhost:3000/api/health
+```
+
+### Local frontend hot-reload
+
+```bash
+npm run start:dev   # Nest on :3000
+npm run dev:web     # Vite on :5173 (proxies /api → :3000)
 ```
 
 ## Packages
